@@ -176,7 +176,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="a_nhqcVZtkNCSBesv_J--7" value="TillUI" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="140" width="220" height="160" as="geometry">
+          <mxGeometry x="140" y="50" width="220" height="110" as="geometry">
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -187,7 +187,7 @@
           <mxGeometry y="100" width="220" height="8" as="geometry" />
         </mxCell>
         <mxCell id="a_nhqcVZtkNCSBesv_J--13" value="TillGUI" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="840" y="40" width="220" height="440" as="geometry">
+          <mxGeometry x="910" y="40" width="220" height="440" as="geometry">
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -225,7 +225,7 @@
           <mxGeometry y="296" width="220" height="34" as="geometry" />
         </mxCell>
         <mxCell id="LBgUZAJBpAkBWCtoCEx2-12" value="Inventory" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;shadow=0;strokeColor=#788AA3;strokeWidth=1;fontFamily=Helvetica;fontSize=12;fontColor=#46495D;labelBackgroundColor=none;fillColor=#B2C9AB;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="490" y="30" width="260" height="216" as="geometry" />
+          <mxGeometry x="610" y="30" width="260" height="216" as="geometry" />
         </mxCell>
         <mxCell id="LBgUZAJBpAkBWCtoCEx2-13" value="-shelfProduct: ArrayList&amp;lt;Product&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#46495D;fontStyle=0;labelBackgroundColor=none;" vertex="1" parent="LBgUZAJBpAkBWCtoCEx2-12">
           <mxGeometry y="26" width="260" height="26" as="geometry" />
@@ -265,6 +265,12 @@
         </mxCell>
         <mxCell id="LBgUZAJBpAkBWCtoCEx2-24" value="0.." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="LBgUZAJBpAkBWCtoCEx2-25">
           <mxGeometry width="14" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="2jmXNf7c_xJhnHNN-KRq-0" value="Vertical Container" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="365" y="10" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="2jmXNf7c_xJhnHNN-KRq-2" value="Watch video on interfaces or go back to lecture about interfaces to understand what they need to include. In short an interface covers what is required of the program." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="2jmXNf7c_xJhnHNN-KRq-0">
+          <mxGeometry y="24" width="220" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
