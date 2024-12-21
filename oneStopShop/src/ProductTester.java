@@ -36,6 +36,12 @@ public class ProductTester {
         // Test 7: View vegetable list that's been manually entered like in a normal store
         System.out.println(vegetables.getVegetableList());
 
+        // Test 8: See if we can search for a vegetable using the get method in Vegetables class
+        System.out.println(vegetables.getVegetable("carrots"));
+
+        // Test 9: See if it will return a message for a vegetable that does not exist in the list
+        System.out.println(vegetables.getVegetable("Beets"));
+
     }
 
 
