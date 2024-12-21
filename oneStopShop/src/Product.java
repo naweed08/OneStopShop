@@ -54,4 +54,16 @@ public class Product {
     public double calculateSubTotal(){
        return this.subTotal = this.price * this.quantity;
     }
+
+    /** Returns information about a product
+     *
+     * @return product information as a string
+     */
+    public String toString(){
+        String s = "Description: " + this.description + '\n' +
+                "Price: " + this.price + '\n' +
+                "Quantity: " + this.quantity + '\n' +
+                "Sub Total: " + this.subTotal;
+        return s;
+    }
 }
