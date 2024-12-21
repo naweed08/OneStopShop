@@ -63,7 +63,7 @@ public class Product {
         String s = "Description: " + this.description + '\n' +
                 "Price: " + this.price + '\n' +
                 "Quantity: " + this.quantity + '\n' +
-                "Sub Total: " + this.subTotal;
+                "Sub Total: " + this.subTotal + '\n';
         return s;
     }
 }

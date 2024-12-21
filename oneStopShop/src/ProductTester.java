@@ -5,6 +5,8 @@ public class ProductTester {
     public static void main(String[] args){
         Product p1 = new Product("Basmati Rice 1kg", 5.99, 10);
 
+        Vegetables vegetables = new Vegetables("Vegetables Category", 0.00, 0);
+
         // Test 1: Ensure the correct information is returned with no missing values
         System.out.println(p1);
         System.out.println('\n');
@@ -30,6 +32,9 @@ public class ProductTester {
         // Test 6: Check what the subTotal for a product is
         System.out.println("Sub Total: " + p1.calculateSubTotal());
         System.out.println('\n');
+
+        // Test 7: View vegetable list that's been manually entered like in a normal store
+        System.out.println(vegetables.getVegetableList());
 
     }
 
