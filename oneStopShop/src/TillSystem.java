@@ -18,6 +18,14 @@ public class TillSystem {
         scannedProducts.remove(product);
     }
 
+    public String displayScannedProducts () {
+        String s = " ";
+        for (Product product : scannedProducts) {
+            s += product + "\n";
+        }
+        return s;
+    }
+
     public double calculateTotal() {
         for (Product product : scannedProducts) {
             totalPrice += product.calculateSubTotal();
