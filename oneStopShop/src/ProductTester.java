@@ -9,6 +9,8 @@ public class ProductTester {
 
         Fruits fruits = new Fruits("Fruits Category", 0.00, 0);
 
+        Drinks drinks = new Drinks("Drinks Category", 0.00, 0);
+
         // Test 1: Ensure the correct information is returned with no missing values
         System.out.println(p1);
         System.out.println('\n');
@@ -52,6 +54,15 @@ public class ProductTester {
 
         // Test 12: Search for an item that does not exist in fruits list Expect a message explaining so
         System.out.println(fruits.getFruit("Pineapple"));
+
+        // Test 13: Print Drink list to the command line making sure no items are missing
+        System.out.println(drinks.getDrinksList());
+
+        // Test 14: Search for a specific drink in drink list
+        System.out.println(drinks.getDrink("Red Bull"));
+
+        // Test 15: Search for an item that does not exist in drinks list Expect a message explaining so
+        System.out.println(drinks.getDrink("Rubicon"));
 
     }
 
