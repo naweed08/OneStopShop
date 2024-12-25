@@ -11,10 +11,10 @@ public class Tobacco extends Product {
     }
 
     private void initializeTobaccoList() {
-        tobaccoList.add(new Tobacco("Marlboro", 8.99, 20));
-        tobaccoList.add(new Tobacco("Blue Light", 12.99, 12));
-        tobaccoList.add(new Tobacco("Buzz Light", 6.99, 24));
-        tobaccoList.add(new Tobacco("Grey Goose", 11.99, 17));
+        tobaccoList.add(new Product("Marlboro", 8.99, 20));
+        tobaccoList.add(new Product("Blue Light", 12.99, 12));
+        tobaccoList.add(new Product("Buzz Light", 6.99, 24));
+        tobaccoList.add(new Product("Grey Goose", 11.99, 17));
     }
 
     public String getTobaccoList () {
