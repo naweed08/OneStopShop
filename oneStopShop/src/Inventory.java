@@ -34,6 +34,10 @@ public class Inventory {
         changeDate(newDate);
     }
 
+    // Get product expiry date (by search -> product Name)
+
+    // Get inventory List with expiry date
+
 
 
 
