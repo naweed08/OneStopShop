@@ -1,17 +1,18 @@
 import javax.sound.midi.SysexMessage;
+import java.time.LocalDate;
 
 public class ProductTester {
 
     public static void main(String[] args){
-        Product p1 = new Product("Basmati Rice 1kg", 5.99, 10);
+        Product p1 = new Product("Basmati Rice 1kg", 5.99, 10, LocalDate.of(2025, 8, 1));
 
-        Vegetables vegetables = new Vegetables("Vegetables Category", 0.00, 0);
+        Vegetables vegetables = new Vegetables("Vegetables Category", 0.00, 0, LocalDate.of(2025, 8, 1));
 
-        Fruits fruits = new Fruits("Fruits Category", 0.00, 0);
+        Fruits fruits = new Fruits("Fruits Category", 0.00, 0, LocalDate.of(2025, 8, 1));
 
-        Drinks drinks = new Drinks("Drinks Category", 0.00, 0);
+        Drinks drinks = new Drinks("Drinks Category", 0.00, 0, LocalDate.of(2025, 8, 1));
 
-        Tobacco tobacco = new Tobacco("Tobacco Category", 0.00, 0);
+        Tobacco tobacco = new Tobacco("Tobacco Category", 0.00, 0, LocalDate.of(2025, 8, 1));
 
         // Test 1: Ensure the correct information is returned with no missing values
         System.out.println(p1);
