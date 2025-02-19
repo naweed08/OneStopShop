@@ -1,14 +1,19 @@
+import java.time.LocalDate;
+import java.util.logging.Level;
+
 public class Product {
     private final String description;
     private double price;
     private int quantity;
     private double subTotal;
+    private LocalDate expiryDate;
 
-    public Product(String description, double price, int quantity){
+    public Product(String description, double price, int quantity, LocalDate expiryDate){
         this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.subTotal = 0;
+        this.expiryDate = expiryDate;
     }
 
     /** Returns the description of a product
@@ -55,6 +60,22 @@ public class Product {
        return this.subTotal = this.price * this.quantity;
     }
 
+    /**
+     * Setting date for perishable product
+     */
+    public void setExpiryDate (LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    /**
+     * Returns the current expiry date of a product
+     *
+     * @return date of product expiry date
+     */
+    public LocalDate getExpiryDate() {
+        return this.expiryDate;
+    }
+
     /** Returns information about a product
      *
      * @return product information as a string
@@ -63,7 +84,8 @@ public class Product {
         String s = "Description: " + this.description + '\n' +
                 "Price: " + this.price + '\n' +
                 "Quantity: " + this.quantity + '\n' +
-                "Sub Total: " + this.subTotal + '\n';
+                "Sub Total: " + this.subTotal + '\n' +
+                "Expiry Date: " + this.expiryDate;
         return s;
     }
 }
