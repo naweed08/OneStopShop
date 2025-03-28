@@ -80,6 +80,7 @@ public class Product {
      *
      * @return product information as a string
      */
+    @Override
     public String toString(){
         String s = "Description: " + this.description + '\n' +
                 "Price: " + this.price + '\n' +
