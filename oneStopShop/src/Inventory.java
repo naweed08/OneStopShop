@@ -46,10 +46,16 @@ public class Inventory {
     }
 
     // Get inventory List with expiry date
+    public String viewAllProducts() {
+        if (shelfProducts.isEmpty())
+            return "Inventory is empty";
 
-
-
-
+        String s = "";
+        for (Product p : shelfProducts) {
+            s += p + "\n";
+        }
+        return s;
+    }
 
 
 }
