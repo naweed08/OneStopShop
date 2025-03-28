@@ -35,6 +35,15 @@ public class Inventory {
     }
 
     // Get product expiry date (by search -> product Name)
+    public LocalDate getExpiryDate(Product product) {
+        LocalDate s = null;
+        for (Product p : shelfProducts) {
+            if (p.equals(product)) {
+                return p.getExpiryDate();
+            }
+        }
+        return null;
+    }
 
     // Get inventory List with expiry date
 
