@@ -20,18 +20,14 @@ public class Inventory {
         shelfProducts.remove(product);
     }
 
-    public LocalDate changeDate (LocalDate expDate) {
-        this.sellByDate = expDate;
-        return expDate;
-    }
-
-    public void promptDateChange() {
-        Scanner s = new Scanner(System.in);
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        System.out.println("Enter the new expiry date (yyyy-MM-dd): ");
-        String input = s.nextLine();
-        LocalDate newDate = LocalDate.parse(input, format);
-        changeDate(newDate);
+    public boolean changeDate (String productDesc, LocalDate newDate) {
+        for (Product p : shelfProducts) {
+            if (p.getDescription().equals(productDesc)) {
+                p.setExpiryDate(newDate);
+                return true;
+            }
+        }
+        return false;
     }
 
     // Get product expiry date (by search -> product Name)
