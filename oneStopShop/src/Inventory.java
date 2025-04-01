@@ -16,8 +16,14 @@ public class Inventory {
         shelfProducts.add(product);
     }
 
-    public void removeProduct(Product product) {
-        shelfProducts.remove(product);
+    public boolean removeProduct(String productDesc) {
+        for (Product p : shelfProducts) {
+            if (p.getDescription().equals(productDesc)) {
+                shelfProducts.remove(p);
+            }
+            return true;
+        }
+        return false;
     }
 
     public boolean changeDate (String productDesc, LocalDate newDate) {
