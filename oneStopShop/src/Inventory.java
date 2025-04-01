@@ -31,10 +31,10 @@ public class Inventory {
     }
 
     // Get product expiry date (by search -> product Name)
-    public LocalDate getExpiryDate(Product product) {
+    public LocalDate getExpiryDate(String prodName) {
         LocalDate s = null;
         for (Product p : shelfProducts) {
-            if (p.equals(product)) {
+            if (p.getDescription().equals(prodName)) {
                 return p.getExpiryDate();
             }
         }
