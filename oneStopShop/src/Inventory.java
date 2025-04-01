@@ -51,9 +51,9 @@ public class Inventory {
 
         String s = "";
         for (Product p : shelfProducts) {
-            s += p + "\n";
+            s += p + "\n\n";
         }
-        return s;
+        return s.trim();
     }
 
 
