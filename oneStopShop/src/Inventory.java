@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Inventory {
 
     private ArrayList<Product> shelfProducts;
-    private LocalDate sellByDate;
 
     public Inventory() {
         shelfProducts = new ArrayList<>();
