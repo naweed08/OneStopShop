@@ -35,7 +35,6 @@ public class Inventory {
         return false;
     }
 
-    // Get product expiry date (by search -> product Name)
     public LocalDate getExpiryDate(String prodName) {
         LocalDate s = null;
         for (Product p : shelfProducts) {
@@ -46,7 +45,6 @@ public class Inventory {
         return null;
     }
 
-    // Get inventory List with expiry date
     public String viewAllProducts() {
         if (shelfProducts.isEmpty())
             return "Inventory is empty";
