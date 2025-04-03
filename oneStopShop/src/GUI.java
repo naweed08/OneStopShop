@@ -4,6 +4,7 @@ import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class GUI {
 
@@ -51,17 +52,14 @@ public class GUI {
         menu.add(menuToLeft, BorderLayout.WEST);
 
         //------ Center user and date info -----
-        LocalDate today = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String formattedDate = today.format(formatter);
-        JLabel centerDateLabel = new JLabel("[naweed - " + formattedDate + "]");
+        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        JLabel centerDateLabel = new JLabel("[naweed - " + today + "]");
         centerDateLabel.setHorizontalAlignment(SwingConstants.CENTER);
         menu.add(centerDateLabel, BorderLayout.CENTER);
 
         //------- Log in Button ----------------
-        JButton login = new JButton("Log in");
         JPanel menuRightSide = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        menuRightSide.add(login);
+        menuRightSide.add(new JButton("Log in"));
         menu.add(menuRightSide, BorderLayout.EAST);
 
         frame.setJMenuBar(menu);
@@ -74,12 +72,14 @@ public class GUI {
         JTable table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
 
+        JPanel panelC = new JPanel(new BorderLayout());
+        panelC.add(scrollPane, BorderLayout.CENTER);
+
         //------- Bottom Total Panel -----------
         JPanel totalPanel = new JPanel(new BorderLayout());
         totalPanel.add(new JLabel("Total"), BorderLayout.WEST);
-
-        JPanel panelC = new JPanel(new BorderLayout());
-        panelC.add(scrollPane, BorderLayout.CENTER);
+        totalLabel = new JLabel("£0.00", SwingConstants.RIGHT);
+        totalPanel.add(totalLabel, BorderLayout.EAST);
         panelC.add(totalPanel, BorderLayout.SOUTH);
 
         //------- East Buttons Panel -----------
@@ -101,6 +101,7 @@ public class GUI {
         discountPanel.add(new JButton("Blue light discount"));
         discountPanel.add(new JButton("Search for item"));
         discountPanel.add(new JButton("View Inventory"));
+        panelS.add(discountPanel, BorderLayout.CENTER);
 
         //------- Numeric keypad to right ------
         JPanel numPad = new JPanel(new GridLayout(4, 3, 5, 5));
@@ -109,15 +110,51 @@ public class GUI {
         }
         numPad.add(new JButton("0"));
         numPad.add(new JButton("."));
-        numPad.add(new JButton("East"));
-
-        panelS.add(discountPanel, BorderLayout.CENTER);
+        numPad.add(new JButton("Enter"));
         panelS.add(numPad, BorderLayout.EAST);
 
         //------- Set panels to frame ----------
         frame.add(panelC, BorderLayout.CENTER);
         frame.add(panelE, BorderLayout.EAST);
         frame.add(panelS, BorderLayout.SOUTH);
+    }
+
+    private void catSelection(String categoryName) {
+        java.util.List<Product> productList = new ArrayList<>();
+
+        switch (categoryName.toLowerCase()) {
+            case "fruits" -> {
+                Fruits fruits = new Fruits("", 0.0, 0, LocalDate.now());
+                productList = fruits.getFruitList();
+            }
+            case "vegetables" -> {
+                Vegetables vegetables = new Vegetables("", 0.0, 0, LocalDate.now());
+                productList = vegetables.getVegetableList();
+            }
+            case "drinks" -> {
+                Drinks drinks = new Drinks("", 0.0, 0, LocalDate.now());
+                productList = drinks.getDrinksList();
+            }
+            case "tobacco" -> {
+                Tobacco tobacco = new Tobacco("", 0.0, 0, LocalDate.now());
+                productList = tobacco.getTobaccoList();
+            }
+        }
+
+        //POP up window for each product
+        JDialog prodDialog = new JDialog(frame, categoryName + " Options", true);
+        prodDialog.setLayout(new GridLayout(productList.size(), 1));
+        for (Product p : productList) {
+            JButton button = new JButton(p.getDescription() + " (£" + p.getPrice() + ")");
+            button.addActionListener(e -> {
+                prodDialog.dispose(); //closes pop up window
+                enterQuantity(p);
+            });
+            prodDialog.add(button);
+        }
+        prodDialog.setSize(300, 200);
+        prodDialog.setLocationRelativeTo(frame);
+        prodDialog.setVisible(true);
     }
 
     public static void main(String[] args) {
